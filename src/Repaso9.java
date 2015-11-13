@@ -10,7 +10,7 @@ import acm.graphics.*;
  * 
  */
 
-public class Repaso8 extends GraphicsProgram{
+public class Repaso9 extends GraphicsProgram{
 
 	//declaro una variable de instancia para guardar el rectangulo
 	GRect rectangulo;
@@ -39,23 +39,25 @@ public class Repaso8 extends GraphicsProgram{
 		
 		
 	
-	public void mouseClicked (MouseEvent evento){
+
+		public void mouseClicked (MouseEvent evento){
 
 
-		if ( getElementAt (evento.getX(),evento.getY())==rectangulo){
-			double distanciaAlCentroDelRectangulo = 
-					evento.getX()-rectangulo.getX();
-			if(distanciaAlCentroDelRectangulo > rectangulo.getWidth()/2){
-				rectangulo.move(10, 0);
-			}
-			else {
-				rectangulo.move(-10, 0);
-			}
-		
+			if ( getElementAt (evento.getX(),evento.getY())==rectangulo){
+				double distanciaAlCentroDelRectangulo = 
+						evento.getY()-rectangulo.getY();
+				if(distanciaAlCentroDelRectangulo > rectangulo.getHeight()/2){
+					rectangulo.move(0, 10);
+				}
+				else {
+					rectangulo.move(0, -10);
+				}
+			
 
 
-	}
+		}
 }
+		
 }
 
 
