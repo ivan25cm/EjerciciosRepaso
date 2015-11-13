@@ -5,21 +5,19 @@ import acm.program.*;
 import acm.util.RandomGenerator;
 import acm.graphics.*;
 /*
- * REPASO 5 añade soporte al programa para poder escuchar los clicks del raton
- * 
- * Lo que hara el programa es cambiar el color de relleno aleatoriamente del rectangulo cada vez que
- * se pulse click
- * 
+*Repaso 6
+*es un programa que hace lo mismo que repaso5 pero que solo cambia el coplor del rectangulo
+*si se hace click dentro de el
  */
-public class Repaso5 extends GraphicsProgram{
+public class Repaso6 extends GraphicsProgram{
 
 	//declaro una variable de instancia para guardar el rectangulo
 	GRect rectangulo;
 	RandomGenerator aleatorio = new RandomGenerator();
 	
-	public void ini (){
+	public void init(){
 		setSize (800,600);
-		 rectangulo = new GRect (120,80);
+		rectangulo = new GRect (120,80);
 		//inserto el "escuchador" del raton
 		
 		
@@ -31,17 +29,20 @@ public class Repaso5 extends GraphicsProgram{
 		add(rectangulo, getWidth()/2- rectangulo.getWidth()/2,
 				getHeight()/2-rectangulo.getHeight()/2);
 	}
+
+		
+		
+		
 	
-	
-	//añado el metodo que escucha el evento del click del raton
-	public void mouseClicked (MouseEvent evento){
-		if (evento.getButton ()== MouseEvent.BUTTON1){
-		rectangulo.setFilled(true);
-		rectangulo.setFillColor(aleatorio.nextColor());
-		
-		
-		
+		public void mouseClicked (MouseEvent evento){
+			//evento.getX()
+			// si en la posicion en la que se hace click esta el rectangulo entonces lo relleno
+			
+			//la funcion se llama getElementat
+			if ( getElementAt (evento.getX(),evento.getY())==rectangulo){
+			rectangulo.setFilled(true);
+			rectangulo.setFillColor(aleatorio.nextColor());
 	}
-	}
+		}
 }
 
